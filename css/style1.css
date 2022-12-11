@@ -1,0 +1,132 @@
+.social-icons{
+  background-color:white;
+  border:2px solid black;
+  margin-top:5px;
+  padding-top:5px
+}
+
+
+.social-icons .social-icon-youtube {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    /* background-color: white; */
+    color: rgb(209, 5, 5);
+    border-radius: 100%;
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+  }
+.social-icons .social-icon-facebook {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    /* background-color: white; */
+    color: rgb(5, 96, 181);
+    border-radius: 100%;
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+  }
+.social-icons .social-icon-twitter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    /* background-color: white; */
+    color: rgb(5, 96, 181);
+    border-radius: 100%;
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+  }
+  .social-icons .social-icon-instagram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    /* background-color: white; */
+    color: rgb(168, 3, 110);
+    border-radius: 100%;
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+  }
+  .social-icons .social-icon-linkedin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: rgb(6, 47, 141);
+    color: rgb(255, 255, 255);
+    border-radius: 100%;
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+  }
+  .social-icons .social-icon-quora {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(123, 7, 7);
+    border-radius: 100%;
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+  }
+   .social-icons .social-icon-telegram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: rgb(255, 255, 255);
+    /*color: rgb(123, 7, 7);*/
+    border-radius: 100%;
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+  }
+  
+  marquee.latestPart {
+    background-color: #fafafa;
+    border: 2px solid black;
+}
+
+#main-content .post-content img{
+  width:100%;
+}
+ 
+ .inner-content.clearfix {
+    font-size: 15px;
+}
+
+/*for blinking text*/
+
+.blink {
+        animation: blink-animation 1s steps(5, start) infinite;
+        -webkit-animation: blink-animation 1s steps(5, start) infinite;
+      }
+      @keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+      @-webkit-keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+      
+      
+      /*for image samll*/
+     
+#main-content .single-post img.single-feature-image{
+    width: 40%;
+    margin: 0 auto 20px;
+    display: block;
+    border: 3px solid #e7e7e7;
+}

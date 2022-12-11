@@ -1,0 +1,84 @@
+nav#sideNav{
+    background-color: darkred;}
+span.text-primary{
+    color: darkred;
+}
+.social-icons .social-icon-youtube {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    /* background-color: white; */
+    color: rgb(209, 5, 5);
+    border-radius: 100%;
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+  }
+.social-icons .social-icon-facebook {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    /* background-color: white; */
+    color: rgb(5, 96, 181);
+    border-radius: 100%;
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+  }
+.social-icons .social-icon-twitter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    /* background-color: white; */
+    color: rgb(5, 96, 181);
+    border-radius: 100%;
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+  }
+  .social-icons .social-icon-instagram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    /* background-color: white; */
+    color: rgb(168, 3, 110);
+    border-radius: 100%;
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+  }
+  .social-icons .social-icon-linkedin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: rgb(6, 47, 141);
+    color: rgb(255, 255, 255);
+    border-radius: 100%;
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+  }
+  .social-icons .social-icon-quora {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(123, 7, 7);
+    border-radius: 100%;
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+  }
+
+  /* a.btn.btn-primary {
+    background-color: rgb(235, 225, 29);
+    border-radius: 4px solid black;
+    box-shadow: 0 3px rgb(18, 17, 17);
+    padding-bottom: 5px;
+  } */
