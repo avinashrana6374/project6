@@ -31,11 +31,11 @@
           while($row = mysqli_fetch_assoc($result)) {
       ?>
         <div class="recent-post">
-            <a class="post-img" href="http://localhost/public_html/single.php/<?php echo $row['post_url']; ?>">
-                <img src="http://localhost/public_html/admin/upload/<?php echo $row['post_img']; ?>" alt="<?php echo $row['post_img']; ?>">
+            <a class="post-img" href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']?>/public_html/single.php/<?php echo $row['post_url']; ?>">
+                <img src="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']?>/public_html/admin/upload/<?php echo $row['post_img']; ?>" alt="<?php echo $row['post_img']; ?>">
             </a>
             <div class="post-content">
-                <h5><a href="http://localhost/public_html/single.php/<?php echo $row['post_url']; ?>"><?php echo $row['title']; ?></a></h5>
+                <h5><a href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']?>/public_html/single.php/<?php echo $row['post_url']; ?>"><?php echo $row['title']; ?></a></h5>
                 <span>
                     <i class="fa fa-tags" aria-hidden="true"></i>
                     <a href='category.php?cid=<?php echo $row['category']; ?>'><?php echo $row['category_name']; ?></a>
@@ -44,7 +44,7 @@
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                     <?php echo $row['post_date']; ?>
                 </span>
-                <a class="read-more" href="http://localhost/public_html/single.php/<?php echo $row['post_url']; ?>">read more</a>
+                <a class="read-more" href="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']?>/public_html/single.php/<?php echo $row['post_url']; ?>">read more</a>
             </div>
         </div>
     <?php

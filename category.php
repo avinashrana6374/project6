@@ -65,7 +65,7 @@
                     <div class="post-content">
                         <div class="row">
                             <div class="col-md-4">
-                              <a class="post-img" href="single.php/<?php echo $row['post_url']; ?>"><img src="http://localhost/public_html/admin/upload/<?php echo $row['post_img']; ?>" alt=""/></a>
+                              <a class="post-img" href="single.php/<?php echo $row['post_url']; ?>"><img src="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']?>/public_html/admin/upload/<?php echo $row['post_img']; ?>" alt=""/></a>
                             </div>
                             <div class="col-md-8">
                               <div class="inner-content clearfix">

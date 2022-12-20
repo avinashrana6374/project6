@@ -38,7 +38,7 @@
                                       <div class="post-information">
                                           <span>
                                               <i class="fa fa-tags" aria-hidden="true"></i>
-                                              <a href='http://localhost/public_html/category.php/<?php echo $row['category_name']; ?>'><?php echo $row['category_name']; ?></a>
+                                              <a href='<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']?>/public_html/category.php/<?php echo $row['category_name']; ?>'><?php echo $row['category_name']; ?></a>
                                           </span>
                                           <span>
                                               <i class="fa fa-user" aria-hidden="true"></i>
