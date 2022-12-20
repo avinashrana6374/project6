@@ -41,7 +41,6 @@
       break;
     case "search.php":
       if(isset($_GET['search'])){
-
         $page_title = $_GET['search'];
       }else{
         $page_title = "No Search Result Found";

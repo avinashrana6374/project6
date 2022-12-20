@@ -65,11 +65,15 @@
                     <div class="post-content">
                         <div class="row">
                             <div class="col-md-4">
-                              <a class="post-img" href="single.php/<?php echo $row['post_url']; ?>"><img src="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']?>/public_html/admin/upload/<?php echo $row['post_img']; ?>" alt=""/></a>
+                              <a class="post-img" href="<?php
+                              $server_uri = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+                              echo $server_uri. "/public_html/single.php/". $row['post_url']; ?>"><img src="<?php echo $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']?>/public_html/admin/upload/<?php echo $row['post_img']; ?>" alt=""/></a>
                             </div>
                             <div class="col-md-8">
                               <div class="inner-content clearfix">
-                                  <h3><a href='single.php/<?php echo $row['post_url']; ?>'><?php echo $row['title']; ?></a></h3>
+                                  <h3><a href='<?php
+                              $server_uri = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+                              echo $server_uri. "/public_html/single.php/". $row['post_url']; ?>'><?php echo $row['title']; ?></a></h3>
                                   <div class="post-information">
                                       <span>
                                           <i class="fa fa-tags" aria-hidden="true"></i>
@@ -87,7 +91,9 @@
                                   <p class="description">
                                       <?php echo substr($row['description'],0,800) . "..."; ?>
                                   </p>
-                                  <a class='read-more pull-right' href='single.php/<?php echo $row['post_url']; ?>'>read more</a>
+                                  <a class='read-more pull-right' href='<?php
+                              $server_uri = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+                              echo $server_uri. "/public_html/single.php/". $row['post_url']; ?>'>read more</a>
                               </div>
                             </div>
                         </div>

@@ -23,12 +23,11 @@
                     $offset = ($page - 1) * $limit;
 
                     $sql = "SELECT post.post_id, post.title, post.description,post.post_date,post.author,
-                    category.category_name,user.username,post.category,post.post_img FROM post
+                    category.category_name,user.username,post.category,post.post_img,post.post_url FROM post
                     LEFT JOIN category ON post.category = category.category_id
                     LEFT JOIN user ON post.author = user.user_id
                     WHERE post.title LIKE '%{$search_term}%' OR post.description LIKE '%{$search_term}%'
                     ORDER BY post.post_id DESC LIMIT {$offset},{$limit}";
-
                     $result = mysqli_query($conn, $sql) or die("Query Failed.");
                     if(mysqli_num_rows($result) > 0){
                       while($row = mysqli_fetch_assoc($result)) {
@@ -36,11 +35,15 @@
                     <div class="post-content">
                         <div class="row">
                             <div class="col-md-4">
-                              <a class="post-img" href="single.php?id=<?php echo $row['post_id']; ?>"><img src="admin/upload/<?php echo $row['post_img']; ?>" alt=""/></a>
+                              <a class="post-img" href="<?php 
+                              $server_uri = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+                              echo $server_uri. "/public_html/single.php/" .$row['post_url']; ?>"><img src="admin/upload/<?php echo $row['post_img']; ?>" alt=""/></a>
                             </div>
                             <div class="col-md-8">
                               <div class="inner-content clearfix">
-                                  <h3><a href='single.php?id=<?php echo $row['post_id']; ?>'><?php echo $row['title']; ?></a></h3>
+                                  <h3><a href='<?php
+                                  $server_uri = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+                                   echo $server_uri. "/public_html/single.php/" .$row['post_url'];?>'><?php echo $row['title']; ?></a></h3>
                                   <div class="post-information">
                                       <span>
                                           <i class="fa fa-tags" aria-hidden="true"></i>
@@ -58,7 +61,9 @@
                                   <p class="description">
                                       <?php echo substr($row['description'],0,500) . "..."; ?>
                                   </p>
-                                  <a class='read-more pull-right' href='single.php?id=<?php echo $row['post_id']; ?>'>read more</a>
+                                  <a class='read-more pull-right' href='<?php
+                                  $server_uri = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+                                   echo $server_uri. "/public_html/single.php/" .$row['post_url'];?>'>read more</a>
                               </div>
                             </div>
                         </div>
@@ -81,8 +86,10 @@
                       $total_page = ceil($total_records / $limit);
 
                       echo '<ul class="pagination admin-pagination">';
+                      $server_uri = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
                       if($page > 1){
-                        echo '<li><a href="search.php?search='.$search_term .'&page='.($page - 1).'">Prev</a></li>';
+                        $server_uri = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+                        echo '<li><a href="'. $server_uri. '/public_html/search.php?search='.$search_term .'&page='.($page - 1).'">Prev</a></li>';
                       }
                       for($i = 1; $i <= $total_page; $i++){
                         if($i == $page){
@@ -90,10 +97,12 @@
                         }else{
                           $active = "";
                         }
-                        echo '<li class="'.$active.'"><a href="search.php?search='.$search_term .'&page='.$i.'">'.$i.'</a></li>';
+                        $server_uri = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+                        echo '<li class="'.$active.'"><a href="'. $server_uri. '/public_html/search.php?search='.$search_term .'&page='.$i.'">'.$i.'</a></li>';
                       }
                       if($total_page > $page){
-                        echo '<li><a href="search.php?search='.$search_term .'&page='.($page + 1).'">Next</a></li>';
+                        $server_uri = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+                        echo '<li><a href="'. $server_uri. '/public_html/search.php?search='.$search_term .'&page='.($page + 1).'">Next</a></li>';
                       }
 
                       echo '</ul>';
