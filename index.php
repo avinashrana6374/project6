@@ -30,15 +30,15 @@
                         <div class="post-content">
                             <div class="row">
                                 <div class="col-md-4">
-                                  <a class="post-img" href="single.php?id=<?php echo $row['post_id']; ?>"><img src="admin/upload/<?php echo $row['post_img']; ?>" alt="<?php echo $row['post_img']; ?>"></a>
+                                  <a class="post-img" href="single.php/<?php echo $row['post_url']; ?>"><img src="admin/upload/<?php echo $row['post_img']; ?>" alt="<?php echo $row['post_img']; ?>"></a>
                                 </div>
                                 <div class="col-md-8">
                                   <div class="inner-content clearfix">
-                                      <h3><a href='single.php?id=<?php echo $row['post_id']; ?>'><?php echo $row['title']; ?></a></h3>
+                                      <h3><a href='single.php/<?php echo $row['post_url']; ?>'><?php echo $row['title']; ?></a></h3>
                                       <div class="post-information">
                                           <span>
                                               <i class="fa fa-tags" aria-hidden="true"></i>
-                                              <a href='category.php?cid=<?php echo $row['category']; ?>'><?php echo $row['category_name']; ?></a>
+                                              <a href='http://localhost/public_html/category.php/<?php echo $row['category_name']; ?>'><?php echo $row['category_name']; ?></a>
                                           </span>
                                           <span>
                                               <i class="fa fa-user" aria-hidden="true"></i>

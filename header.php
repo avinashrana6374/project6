@@ -121,14 +121,14 @@
     
     
     <!--Bootstrap icons-->
-    <link rel="stylesheet" href="./css/bootstrap-icons.css">
+    <link rel="stylesheet" href="http://localhost/public_html/css/bootstrap-icons.css">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css" >
+    <link rel="stylesheet" href="http://localhost/public_html/css/bootstrap.min.css" >
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="./css/font-awesome.css">
+    <link rel="stylesheet" href="http://localhost/public_html/css/font-awesome.css">
     <!-- Custom stlylesheet -->
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" href="./css/style1.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/public_html/css/style.css">
+    <link rel="stylesheet" href="http://localhost/public_html/css/style1.css">
     
     <!--one signal-->
     
@@ -176,7 +176,7 @@
                     if($row['logo'] == ""){
                       echo '<a href="index.php"><h1>'.$row['websitename'].'</h1></a>';
                     }else{
-                      echo '<a href="index.php" id="logo"><img src="admin/images/'. $row['logo'] .'"  alt="find-agri-jobs-logo"></a>';
+                      echo '<a href="index.php" id="logo"><img src="http://localhost/public_html/admin/images/'. $row['logo'] .'"  alt="find-agri-jobs-logo"></a>';
                     }
 
                   }
@@ -208,7 +208,7 @@
     <content style="color:#012B55">Clarification regarding examination being conducted on two days for Common University Entrance Test [CUET (PG)-2022]&nbsp;</content>
        <a href="/Download/Notice/Notice_20220904212913.pdf" class="orange-text" target="_blank">
             <strong>Read More&nbsp;</strong></a>
-            <img src="css/newicon.gif">
+            <img src="http://localhost/public_html/css/newicon.gif">
       </p>
       
     <p>
@@ -279,7 +279,7 @@
                         $active = "";
                       }
                     }
-                    echo "<li><a class='{$active}' href='category.php?cid={$row['category_id']}'>{$row['category_name']}</a></li>";
+                    echo "<li><a class='{$active}' href='category.php/{$row['category_name']}'>{$row['category_name']}</a></li>";
                   } ?>
                 </ul>
                 <?php } ?>

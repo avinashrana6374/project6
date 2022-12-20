@@ -59,7 +59,7 @@
                                     <?php echo $row['post_date']; ?>
                                 </span>
                             </div>
-                            <img class="single-feature-image" src="admin/upload/<?php echo $row['post_img']; ?>" alt="<?php echo $row['post_img']; ?>">
+                            <img class="single-feature-image" src="http://localhost/public_html/admin/upload/<?php echo $row['post_img']; ?>" alt="<?php echo $row['post_img']; ?>">
                             <p class="description">
                                 <?php echo $row['description']; ?>
                             </p>

@@ -7,8 +7,32 @@
                 <div class="post-container">
                   <?php
                   include "config.php";
-                  if(isset($_GET['cid'])){
-                    $cat_id = $_GET['cid'];
+
+                  /**
+                   * category name  code
+                   */
+                  $uri = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+                  $parts = explode("/", $uri);
+                    $categoryName = end($parts);
+
+                    $sqla = "SELECT * FROM category WHERE category_name='$categoryName'";
+                    $resulta = mysqli_query($conn, $sqla);
+
+
+                    $id = '';
+                    if (mysqli_num_rows($resulta) > 0) {
+                      // output data of each row
+                      while ($rows = mysqli_fetch_assoc($resulta)) {
+
+                        $id = $rows["category_id"];
+                      }
+                    } else {
+                      // echo "0 results";
+                    }
+                    //code end
+                    $cat_id = $id;
+                    if (isset($cat_id)) {
+                      //
 
                     $sql1 = "SELECT * FROM category WHERE category_id = {$cat_id}";
                     $result1 = mysqli_query($conn, $sql1) or die("Query Failed.");
@@ -28,7 +52,7 @@
                     $offset = ($page - 1) * $limit;
 
                     $sql = "SELECT post.post_id, post.title, post.description,post.post_date,post.author,
-                    category.category_name,user.username,post.category,post.post_img FROM post
+                    category.category_name,user.username,post.category,post.post_img,post.post_url FROM post
                     LEFT JOIN category ON post.category = category.category_id
                     LEFT JOIN user ON post.author = user.user_id
                     WHERE post.category = {$cat_id}
@@ -41,11 +65,11 @@
                     <div class="post-content">
                         <div class="row">
                             <div class="col-md-4">
-                              <a class="post-img" href="single.php?id=<?php echo $row['post_id']; ?>"><img src="admin/upload/<?php echo $row['post_img']; ?>" alt=""/></a>
+                              <a class="post-img" href="single.php/<?php echo $row['post_url']; ?>"><img src="http://localhost/public_html/admin/upload/<?php echo $row['post_img']; ?>" alt=""/></a>
                             </div>
                             <div class="col-md-8">
                               <div class="inner-content clearfix">
-                                  <h3><a href='single.php?id=<?php echo $row['post_id']; ?>'><?php echo $row['title']; ?></a></h3>
+                                  <h3><a href='single.php/<?php echo $row['post_url']; ?>'><?php echo $row['title']; ?></a></h3>
                                   <div class="post-information">
                                       <span>
                                           <i class="fa fa-tags" aria-hidden="true"></i>
@@ -63,7 +87,7 @@
                                   <p class="description">
                                       <?php echo substr($row['description'],0,800) . "..."; ?>
                                   </p>
-                                  <a class='read-more pull-right' href='single.php?id=<?php echo $row['post_id']; ?>'>read more</a>
+                                  <a class='read-more pull-right' href='single.php/<?php echo $row['post_url']; ?>'>read more</a>
                               </div>
                             </div>
                         </div>
